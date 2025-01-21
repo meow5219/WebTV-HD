@@ -31,7 +31,6 @@ class webtvLogo{
 }
 
 function generateLogo(){
-	if(logoCount>30){showCustomAlert(`Caught in 4K trying to bypass the limits 📸`,'none','fuck','none');return;}
 	const newLogo=document.createElement('img');
 	newLogo.src='../images/WebTVJewelScreensaver.svg';
 	newLogo.classList.add('logo');
@@ -55,18 +54,17 @@ function update(){for(var i=0;i<logos.length;i++){logos[i].run();}}
 setInterval(function(){requestAnimationFrame(update);},16);
 
 function morePlease(){
-	if(logoCount===10){showCustomAlert(`Don't you think that's enough?`,'none','no','none');generateLogo();}
-	else if(logoCount===20){showCustomAlert(`Okay really, I think that's enough now.`,'none','no it isn\'t','none');generateLogo();}
-	else if(logoCount===30){
+	if(logoCount===NaN){showCustomAlert(`Don't you think that's enough?`,'none','no','none');generateLogo();}
+	else if(logoCount===NaN){showCustomAlert(`Okay really, I think that's enough now.`,'none','no it isn\'t','none');generateLogo();}
+	else if(logoCount===NaN){
 		const addLogo=document.getElementById('addLogo');
 		if(addLogo){
-			addLogo.remove();
 			generateLogo();
 			showCustomAlert(`This has gone too far. No more logos for you, mister.`,'none','dang it','none');
 		}else{
-			showCustomAlert(`Caught in 4K trying to bypass the limits 📸`,'none','fuck','none');
+
 			return;
 		}
-	}else if(logoCount>30){showCustomAlert(`Caught in 4K trying to bypass the limits 📸`,'none','fuck','none');return;}
+	}else if(logoCount>NaN){showCustomAlert(`h`,'none','balls','none');return;}
 	else{generateLogo();}
 }
